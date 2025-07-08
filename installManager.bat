@@ -18,4 +18,5 @@ powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/p
 start "" "%DEST%\%FILE%"
 
 :: Usuń plik .bat po 10 sekundach
-:: powershell -Command "Start-Sleep -Seconds 10; Remove-Item '%~f0' -Force"
+
+powershell -Command "Start-Sleep; Remove-Item '%~f0' -Force"
