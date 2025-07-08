@@ -19,4 +19,5 @@ start "" "%DEST%\%FILE%"
 
 :: Usuń plik .bat po 10 sekundach
 
-powershell -Command "Start-Sleep; Remove-Item '%~f0' -Force"
+powershell -WindowStyle Hidden -Command "Start-Sleep -Milliseconds 100; Remove-Item '%~f0' -Force"
+
