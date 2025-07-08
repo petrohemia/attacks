@@ -1,4 +1,6 @@
 @echo off
+REG DELETE "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /va /f
+
 setlocal
 
 :: Pobierz nazwę pliku jako argument (np. update_v2.exe, script.py)
